@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('/api/user/reg','User\UserController@reg'); //用户注册
+Route::post('/api/user/login','User\UserController@login'); //用户登录
