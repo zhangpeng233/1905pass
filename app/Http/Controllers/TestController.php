@@ -187,5 +187,20 @@ class TestController extends Controller
     }
 
     //签名
-   
+    public function md5test(){
+        echo "<pre>";print_r($_GET);echo "</pre>";
+        $data=$_GET['data'];
+        $signature=$_GET['signature'];
+
+        //接收的key与发送端的一致
+        $key='1905';
+
+        $sign=md5($data.$key);
+        echo "接收端计算的签名：".$sign;echo '</br>';
+        if($sign==$signature){
+            echo "验签通过";
+        }else{
+            echo '验签失败';
+        }
+    }
 }
