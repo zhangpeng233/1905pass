@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 
-Route::post('/api/user/reg','User\UserController@reg'); //用户注册
-Route::post('/api/user/login','User\UserController@login'); //用户登录
-Route::get('/api/show/time','User\UserController@showTime'); // 获取数据
+Route::post('/test/reg','TestController@reg');
+Route::post('/test/login','TestController@login');
+Route::get('/test/info','TestController@info');
+
+Route::post('/test/auth','TestController@auth');
+Route::get('/test/checksign','TestController@md5test');
